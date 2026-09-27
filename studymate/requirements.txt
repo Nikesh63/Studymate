@@ -1,0 +1,15 @@
+# Local document RAG
+langchain-community
+langchain-huggingface
+langchain-text-splitters
+chromadb
+sentence-transformers
+pypdf
+
+# Live web search (Tavily)
+tavily-python
+python-dotenv
+
+# App (talks to Ollama over HTTP, no local GPU packages needed)
+gradio
+requests
