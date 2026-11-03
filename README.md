@@ -1,3 +1,51 @@
+# 🎓 StudyMate — Hybrid AI Chatbot (Local Docs + Live Web Search)
+
+> A personal AI study companion that combines your own notes with live web search — built to survive on a laptop with **no dedicated GPU**.
+
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![Ollama](https://img.shields.io/badge/Runs%20on-Ollama%20(CPU)-black.svg)](https://ollama.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](#license)
+[![Status](https://img.shields.io/badge/Status-Active%20Development-yellow.svg)]()
+
+---
+
+## 🚀 The Pitch
+
+Most "build your own LLM chatbot" tutorials assume you have a beefy GPU. **StudyMate doesn't.**
+
+It runs entirely on **CPU** using [Ollama](https://ollama.com), and answers questions by combining two sources of truth **at the same time**:
+
+| Source | What it's for |
+|---|---|
+| 📄 **Your local notes/documents** | Course material, syllabus, lecture notes — answers grounded in *your* content |
+| 🌐 **Live web search** (via Tavily) | Anything current, general, or outside your notes |
+
+The result: ask it anything, and it tells you *where the answer came from* — your notes or the live web — so you always know how much to trust it.
+
+```
+                    Your Question
+                          │
+            ┌─────────────┴─────────────┐
+            ▼                           ▼
+  📄 Local Document Search      🌐 Live Web Search
+   (Chroma + your notes)          (Tavily API)
+            │                           │
+            └─────────────┬─────────────┘
+                          ▼
+              🧠 Local LLM (Qwen2.5, via Ollama)
+                    runs on CPU, no GPU needed
+                          │
+                          ▼
+              ✅ Answer + cited sources
+```
+
+---
+
+## 🎯 Why I'm Building This
+
+I'm currently a **BSc CSIT student (2nd Semester)**, and I built this project for two reasons:
+
+1. **As a study tool** — I wanted a chatbot that could answer questions using *my own* class notes, syllabus, and reference material first, and fall back to a live web search for anything my notes don't cover (recent updates, broader explanations, examples my textbook doesn't have).
 2. **As a learning project** — this is my hands-on introduction to practical LLM engineering: retrieval-augmented generation (RAG), local model inference, fine-tuning workflows, and building something usable end-to-end — all without needing an expensive GPU setup.
 
 This isn't a polished commercial product. It's a **learning-by-building project**, evolving as I learn more, and openly documenting the process (including the hardware constraints, dead ends, and fixes) along the way.
